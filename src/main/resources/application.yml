@@ -1,0 +1,9 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://<okta domain>.oktapreview.com/oauth2/default
+
+server:
+  port: 8081
