@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @SpringBootApplication
 public class SecResServerApplication {
 
@@ -42,8 +44,8 @@ class ResController {
 	}
 
 	@GetMapping("/claims")
-	String getClaims(@AuthenticationPrincipal Jwt jwt) {
-		return jwt.getClaims().toString();
+	Map<String, Object> getClaims(@AuthenticationPrincipal Jwt jwt) {
+		return jwt.getClaims();
 	}
 
 	@GetMapping("/email")
